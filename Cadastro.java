@@ -4,8 +4,8 @@ import java.awt.*;
 
 public class Cadastro extends JFrame {
     // Declaração dos componentes
-    private JLabel nomeLabel, tipoLabel, paisLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel, cepLabel;
-    private JTextField nomeText, rgText, orgaoText, cpfText, emailText, cepText;
+    private JLabel nomeLabel, tipoLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel, cepLabel, paisLabel, municipioLabel;
+    private JTextField municipioText, paisText, nomeText, rgText, orgaoText, cpfText, emailText, cepText;
     private JComboBox<String> paisCombo;
     private JCheckBox fornecedorCheck;
 
@@ -120,9 +120,38 @@ public class Cadastro extends JFrame {
         panel.add(cepLabel);
         frame.add(panel);
         cepText = new JTextField();
-        cepText.setBounds(760, 140, 500, 30);
+        cepText.setBounds(760, 180, 500, 30);
         panel.add(cepText);
         frame.add(panel);
+        paisLabel = new JLabel("País");
+        paisLabel.setBounds(20, 220, 100, 30);
+        paisLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        paisLabel.setVerticalAlignment(SwingConstants.CENTER);
+        paisLabel.setBorder(blackline);
+        panel.add(paisLabel);
+        frame.add(panel);
+        paisText = new JTextField();
+        paisText.setBounds(140, 220, 1130, 30);
+        paisText.setBorder(blackline);
+        panel.add(paisText);
+        frame.add(panel);
+        paisText.setText("BRASIL");
+        municipioText.setEnabled(false);
+        //adicionar o resto da linha 5
+        municipioLabel = new JLabel("Município");
+        municipioLabel.setBounds(20, 260, 100, 30);
+        municipioLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        municipioLabel.setVerticalAlignment(SwingConstants.CENTER);
+        municipioLabel.setBorder(blackline);
+        panel.add(municipioLabel);
+        frame.add(panel);
+        municipioText = new JTextField();
+        municipioText.setBounds(140, 260, 1130, 30);
+        municipioText.setBorder(blackline);
+        panel.add(municipioText);
+        frame.add(panel);
+        //municipioText.setEnabled(true); // Não permite interagir
+
 
         
     }
