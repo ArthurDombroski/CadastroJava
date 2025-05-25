@@ -4,14 +4,42 @@ import java.awt.*;
 
 public class Cadastro extends JFrame {
     // Declaração dos componentes
-    private JLabel nomeLabel, tipoLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel, cepLabel, paisLabel, municipioLabel;
-    private JTextField municipioText, paisText, nomeText, rgText, orgaoText, cpfText, emailText, cepText;
+    private JLabel situacaoLabel, telefoneLabel, bairroLabel, complementoLabel, numeroLabel, logradouroLabel, nomeLabel,
+            ufLabel, tipoLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel, cepLabel,
+            paisLabel, municipioLabel;
+    private JTextField telefoneText, bairroText, complementoText, numeroText, logradouroText, ufText, municipioText,
+            paisText, nomeText, rgText, orgaoText, cpfText, emailText, cepText;
     private JComboBox<String> paisCombo;
     private JCheckBox fornecedorCheck;
+    private JRadioButton ativoRadio, inativoRadio;
+    private ButtonGroup situacaoGroup;
+    private JButton cadastrarButton, excluirButton, limparButton;
 
     public Cadastro() {
         super("Cadastro de Pessoa");
         createWindow();
+    }
+
+    // Método para limpar os campos, deve ficar na classe Cadastro, fora do createUI
+    private void limparCampos() {
+        nomeText.setText("");
+        rgText.setText("");
+        orgaoText.setText("");
+        cpfText.setText("");
+        emailText.setText("");
+        cepText.setText("");
+        paisText.setText("BRASIL");
+        ufText.setText("");
+        municipioText.setText("");
+        municipioText.setEnabled(false);
+        logradouroText.setText("");
+        numeroText.setText("");
+        complementoText.setText("");
+        bairroText.setText("");
+        telefoneText.setText("");
+        paisCombo.setSelectedIndex(0);
+        fornecedorCheck.setSelected(false);
+        situacaoGroup.clearSelection();
     }
 
     private void createWindow() {
@@ -26,9 +54,9 @@ public class Cadastro extends JFrame {
         JPanel panel = new JPanel(null);
         Border blackline = BorderFactory.createLineBorder(Color.black);
         palavraLabel = new JLabel("Cadastro de Pessoa");
-        palavraLabel.setBounds(20, 0, 400, 60); 
-        palavraLabel.setFont(new Font("SansSerif", Font.PLAIN, 32)); 
-        palavraLabel.setForeground(new Color(255, 102, 0)); 
+        palavraLabel.setBounds(20, 0, 400, 60);
+        palavraLabel.setFont(new Font("SansSerif", Font.PLAIN, 32));
+        palavraLabel.setForeground(new Color(255, 102, 0));
         panel.add(palavraLabel);
         frame.add(panel);
         tipoLabel = new JLabel("Tipo:");
@@ -131,13 +159,25 @@ public class Cadastro extends JFrame {
         panel.add(paisLabel);
         frame.add(panel);
         paisText = new JTextField();
-        paisText.setBounds(140, 220, 1130, 30);
+        paisText.setBounds(140, 220, 500, 30);
         paisText.setBorder(blackline);
         panel.add(paisText);
         frame.add(panel);
         paisText.setText("BRASIL");
-        municipioText.setEnabled(false);
-        //adicionar o resto da linha 5
+        paisText.setEnabled(false);
+        paisText.setHorizontalAlignment(SwingConstants.CENTER);
+        // paisText.setForeground(Color.BLACK); // deixa o texto preto
+        ufLabel = new JLabel("UF");
+        ufLabel.setBounds(650, 220, 100, 30);
+        ufLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        ufLabel.setVerticalAlignment(SwingConstants.CENTER);
+        ufLabel.setBorder(blackline);
+        panel.add(ufLabel);
+        frame.add(panel);
+        ufText = new JTextField();
+        ufText.setBounds(760, 220, 500, 30);
+        panel.add(ufText);
+        frame.add(panel);
         municipioLabel = new JLabel("Município");
         municipioLabel.setBounds(20, 260, 100, 30);
         municipioLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -148,12 +188,125 @@ public class Cadastro extends JFrame {
         municipioText = new JTextField();
         municipioText.setBounds(140, 260, 1130, 30);
         municipioText.setBorder(blackline);
+        // municipioText.setBackground(Color.GRAY);
         panel.add(municipioText);
         frame.add(panel);
-        //municipioText.setEnabled(true); // Não permite interagir
+        municipioText.setEnabled(false); // Não permite interagir
+        logradouroLabel = new JLabel("Município");
+        logradouroLabel.setBounds(20, 300, 100, 30);
+        logradouroLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        logradouroLabel.setVerticalAlignment(SwingConstants.CENTER);
+        logradouroLabel.setBorder(blackline);
+        panel.add(logradouroLabel);
+        frame.add(panel);
+        logradouroText = new JTextField();
+        logradouroText.setBounds(140, 300, 1130, 30);
+        logradouroText.setBorder(blackline);
+        panel.add(logradouroText);
+        frame.add(panel);
+        numeroLabel = new JLabel("Número");
+        numeroLabel.setBounds(20, 340, 100, 30);
+        numeroLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        numeroLabel.setVerticalAlignment(SwingConstants.CENTER);
+        numeroLabel.setBorder(blackline);
+        panel.add(numeroLabel);
+        frame.add(panel);
+        numeroText = new JTextField();
+        numeroText.setBounds(140, 340, 500, 30);
+        numeroText.setBorder(blackline);
+        panel.add(numeroText);
+        frame.add(panel);
+        complementoLabel = new JLabel("Complemento");
+        complementoLabel.setBounds(650, 340, 100, 30);
+        complementoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        complementoLabel.setVerticalAlignment(SwingConstants.CENTER);
+        complementoLabel.setBorder(blackline);
+        panel.add(complementoLabel);
+        frame.add(panel);
+        complementoText = new JTextField();
+        complementoText.setBounds(760, 340, 500, 30);
+        panel.add(complementoText);
+        frame.add(panel);
+        bairroLabel = new JLabel("Bairro");
+        bairroLabel.setBounds(20, 380, 100, 30);
+        bairroLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        bairroLabel.setVerticalAlignment(SwingConstants.CENTER);
+        bairroLabel.setBorder(blackline);
+        panel.add(bairroLabel);
+        frame.add(panel);
+        bairroText = new JTextField();
+        bairroText.setBounds(140, 380, 300, 30);
+        panel.add(bairroText);
+        frame.add(panel);
+        telefoneLabel = new JLabel("Telefone");
+        telefoneLabel.setBounds(450, 380, 100, 30);
+        telefoneLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        telefoneLabel.setVerticalAlignment(SwingConstants.CENTER);
+        telefoneLabel.setBorder(blackline);
+        panel.add(telefoneLabel);
+        frame.add(panel);
+        telefoneText = new JTextField();
+        telefoneText.setBounds(570, 380, 300, 30);
+        panel.add(telefoneText);
+        frame.add(panel);
+        situacaoLabel = new JLabel("Situação");
+        situacaoLabel.setBounds(880, 380, 100, 30);
+        situacaoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        situacaoLabel.setVerticalAlignment(SwingConstants.CENTER);
+        situacaoLabel.setBorder(blackline);
+        panel.add(situacaoLabel);
+        frame.add(panel);
+        ativoRadio = new JRadioButton("Ativo");
+        ativoRadio.setBounds(1000, 380, 70, 30);
+        inativoRadio = new JRadioButton("Inativo");
+        inativoRadio.setBounds(1080, 380, 70, 30);
+        situacaoGroup = new ButtonGroup();
+        situacaoGroup.add(ativoRadio);
+        situacaoGroup.add(inativoRadio);
+        panel.add(ativoRadio);
+        frame.add(panel);
+        panel.add(inativoRadio);
+        frame.add(panel);
+        cadastrarButton = new JButton("Cadastrar");
+        cadastrarButton.setBounds(20, 440, 100, 30);
+        cadastrarButton.setBackground(Color.ORANGE);
+        panel.add(cadastrarButton);
+        frame.add(panel);
+        excluirButton = new JButton("Excluir");
+        excluirButton.setBounds(140, 440, 100, 30);
+        excluirButton.setBackground(Color.ORANGE);
+        panel.add(excluirButton);
+        frame.add(panel);
+        limparButton = new JButton("limpar");
+        limparButton.setBounds(260, 440, 100, 30);
+        panel.add(limparButton);
+        frame.add(panel);
+        cadastrarButton.addActionListener(e -> {
+            String nome = nomeText.getText();
+            String tipo = (String) paisCombo.getSelectedItem();
+            String situacao = ativoRadio.isSelected() ? "Ativo"
+                    : (inativoRadio.isSelected() ? "Inativo" : "Não selecionado");
+            boolean fornecedor = fornecedorCheck.isSelected();
+            String email = emailText.getText();
 
+            JOptionPane.showMessageDialog(this,
+                    "Cadastro realizado:\n" +
+                            "Nome: " + nome + "\n" +
+                            "Tipo: " + tipo + "\n" +
+                            "Situação: " + situacao + "\n" +
+                            "Fornecedor: " + fornecedor + "\n" +
+                            "Email: " + email,
+                    "Sucesso",
+                    JOptionPane.INFORMATION_MESSAGE);
+        });
 
-        
+        excluirButton.addActionListener(e -> {
+            limparCampos();
+            JOptionPane.showMessageDialog(this, "Dados excluídos.", "Excluir", JOptionPane.WARNING_MESSAGE);
+        });
+
+        limparButton.addActionListener(e -> limparCampos());
+
     }
 
     public static void main(String[] args) {
