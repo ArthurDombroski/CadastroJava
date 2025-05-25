@@ -1,15 +1,13 @@
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
 import javax.swing.border.Border;
 import java.awt.*;
 
 public class Cadastro extends JFrame {
     // Declaração dos componentes
-    private JLabel nomeLabel, tipoLabel, paisLabel, palavraLabel;
-    private JTextField nomeText;
+    private JLabel nomeLabel, tipoLabel, paisLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel;
+    private JTextField nomeText, rgText, orgaoText, cpfText;
     private JComboBox<String> paisCombo;
+    private JCheckBox fornecedorCheck;
 
     public Cadastro() {
         super("Cadastro de Pessoa");
@@ -34,7 +32,7 @@ public class Cadastro extends JFrame {
         panel.add(palavraLabel);
         frame.add(panel);
         tipoLabel = new JLabel("Tipo:");
-        tipoLabel.setBounds(20, 60, 100, 25);
+        tipoLabel.setBounds(20, 60, 100, 30);
         tipoLabel.setHorizontalAlignment(SwingConstants.CENTER);
         tipoLabel.setVerticalAlignment(SwingConstants.CENTER);
         tipoLabel.setBorder(blackline);
@@ -57,6 +55,60 @@ public class Cadastro extends JFrame {
         nomeText.setBorder(blackline);
         panel.add(nomeText);
         frame.add(panel);
+        rgLabel = new JLabel("RG/Inscrição Estadual:");
+        rgLabel.setBounds(20, 140, 100, 30);
+        rgLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        rgLabel.setVerticalAlignment(SwingConstants.CENTER);
+        rgLabel.setBorder(blackline);
+        panel.add(rgLabel);
+        frame.add(panel);
+        rgText = new JTextField();
+        rgText.setBounds(140, 140, 500, 30);
+        rgText.setBorder(blackline);
+        panel.add(rgText);
+        frame.add(panel);
+        orgaoLabel = new JLabel("Orgão Expeditor:");
+        orgaoLabel.setBounds(650, 140, 100, 30);
+        orgaoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        orgaoLabel.setVerticalAlignment(SwingConstants.CENTER);
+        orgaoLabel.setBorder(blackline);
+        panel.add(orgaoLabel);
+        frame.add(panel);
+        orgaoText = new JTextField();
+        orgaoText.setBounds(760, 140, 500, 30);
+        panel.add(orgaoText);
+        frame.add(panel);
+        cpfLabel = new JLabel("CPF/CNPJ:");
+        cpfLabel.setBounds(260, 60, 100, 30);
+        cpfLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        cpfLabel.setVerticalAlignment(SwingConstants.CENTER);
+        cpfLabel.setBorder(blackline);
+        panel.add(cpfLabel);
+        frame.add(panel);
+        cpfText = new JTextField();
+        cpfText.setBounds(380, 60, 500, 30);
+        panel.add(cpfText);
+        frame.add(panel);
+        fornecedorLabel = new JLabel("Fornecedor");
+        fornecedorLabel.setBounds(900, 60, 100, 30);
+        fornecedorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        fornecedorLabel.setVerticalAlignment(SwingConstants.CENTER);
+        fornecedorLabel.setBorder(blackline);
+        panel.add(fornecedorLabel);
+        frame.add(panel);
+        fornecedorCheck = new JCheckBox();
+        fornecedorCheck.setBounds(1020, 60, 100, 30);
+        panel.add(fornecedorCheck);
+        frame.add(panel);
+        emailLabel = new JLabel("Email");
+        emailLabel.setBounds(20, 140, 100, 30);
+        emailLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        emailLabel.setVerticalAlignment(SwingConstants.CENTER);
+        emailLabel.setBorder(blackline);
+        panel.add(emailLabel);
+        frame.add(panel);
+
+        
     }
 
     public static void main(String[] args) {
