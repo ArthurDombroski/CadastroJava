@@ -4,8 +4,8 @@ import java.awt.*;
 
 public class Cadastro extends JFrame {
     // Declaração dos componentes
-    private JLabel nomeLabel, tipoLabel, paisLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel;
-    private JTextField nomeText, rgText, orgaoText, cpfText;
+    private JLabel nomeLabel, tipoLabel, paisLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel, cepLabel;
+    private JTextField nomeText, rgText, orgaoText, cpfText, emailText, cepText;
     private JComboBox<String> paisCombo;
     private JCheckBox fornecedorCheck;
 
@@ -101,11 +101,27 @@ public class Cadastro extends JFrame {
         panel.add(fornecedorCheck);
         frame.add(panel);
         emailLabel = new JLabel("Email");
-        emailLabel.setBounds(20, 140, 100, 30);
+        emailLabel.setBounds(20, 180, 100, 30);
         emailLabel.setHorizontalAlignment(SwingConstants.CENTER);
         emailLabel.setVerticalAlignment(SwingConstants.CENTER);
         emailLabel.setBorder(blackline);
         panel.add(emailLabel);
+        frame.add(panel);
+        emailText = new JTextField();
+        emailText.setBounds(140, 180, 500, 30);
+        emailText.setBorder(blackline);
+        panel.add(emailText);
+        frame.add(panel);
+        cepLabel = new JLabel("CEP");
+        cepLabel.setBounds(650, 180, 100, 30);
+        cepLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        cepLabel.setVerticalAlignment(SwingConstants.CENTER);
+        cepLabel.setBorder(blackline);
+        panel.add(cepLabel);
+        frame.add(panel);
+        cepText = new JTextField();
+        cepText.setBounds(760, 140, 500, 30);
+        panel.add(cepText);
         frame.add(panel);
 
         
