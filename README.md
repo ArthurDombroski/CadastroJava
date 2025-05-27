@@ -33,6 +33,8 @@ A interface do sistema é construída com componentes do `javax.swing`, incluind
 ## 🏁 Como Executar
 
 1. Clone ou baixe o repositório.
+    ```bash
+    git clone https://github.com/ArthurDombroski/CadastroJava.git
 2. Compile o arquivo:
 
    ```bash
