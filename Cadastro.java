@@ -8,7 +8,7 @@ public class Cadastro extends JFrame {
             ufLabel, tipoLabel, palavraLabel, rgLabel, orgaoLabel, cpfLabel, fornecedorLabel, emailLabel, cepLabel,
             paisLabel, municipioLabel;
     private JTextField telefoneText, bairroText, complementoText, numeroText, logradouroText, ufText, municipioText,
-            paisText, nomeText, rgText, orgaoText, cpfText, emailText, cepText;
+            paisText, nomeText, rgText, orgaoText, cpfText, emailText, cepText, siglaText;
     private JComboBox<String> paisCombo;
     private JCheckBox fornecedorCheck;
     private JRadioButton ativoRadio, inativoRadio;
@@ -20,7 +20,7 @@ public class Cadastro extends JFrame {
         createWindow();
     }
 
-    // Método para limpar os campos, deve ficar na classe Cadastro, fora do createUI
+    // Método para limpar os campos preenchidos
     private void limparCampos() {
         nomeText.setText("");
         rgText.setText("");
@@ -165,8 +165,9 @@ public class Cadastro extends JFrame {
         frame.add(panel);
         paisText.setText("BRASIL");
         paisText.setEnabled(false);
+        paisText.setBackground(Color.LIGHT_GRAY);
         paisText.setHorizontalAlignment(SwingConstants.CENTER);
-        // paisText.setForeground(Color.BLACK); // deixa o texto preto
+        //paisText.setForeground(Color.BLACK);
         ufLabel = new JLabel("UF");
         ufLabel.setBounds(650, 220, 100, 30);
         ufLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -175,8 +176,14 @@ public class Cadastro extends JFrame {
         panel.add(ufLabel);
         frame.add(panel);
         ufText = new JTextField();
-        ufText.setBounds(760, 220, 500, 30);
+        ufText.setBounds(760, 220, 150, 30);
         panel.add(ufText);
+        frame.add(panel);
+        siglaText = new JTextField();
+        siglaText.setBounds(920, 220, 340, 30);
+        siglaText.setEnabled(false);
+        siglaText.setBackground(Color.LIGHT_GRAY);
+        panel.add(siglaText);
         frame.add(panel);
         municipioLabel = new JLabel("Município");
         municipioLabel.setBounds(20, 260, 100, 30);
@@ -188,11 +195,11 @@ public class Cadastro extends JFrame {
         municipioText = new JTextField();
         municipioText.setBounds(140, 260, 1130, 30);
         municipioText.setBorder(blackline);
-        // municipioText.setBackground(Color.GRAY);
+        municipioText.setBackground(Color.LIGHT_GRAY);
         panel.add(municipioText);
         frame.add(panel);
-        municipioText.setEnabled(false); // Não permite interagir
-        logradouroLabel = new JLabel("Município");
+        municipioText.setEnabled(false); // Não permite interagir com o campo
+        logradouroLabel = new JLabel("Logradouro");
         logradouroLabel.setBounds(20, 300, 100, 30);
         logradouroLabel.setHorizontalAlignment(SwingConstants.CENTER);
         logradouroLabel.setVerticalAlignment(SwingConstants.CENTER);
