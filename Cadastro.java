@@ -46,7 +46,7 @@ public class Cadastro extends JFrame {
         JFrame frame = new JFrame("Cadastro Pessoa");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createUI(frame);
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); //Abre a tela maximizada
         frame.setVisible(true);
     }
 
