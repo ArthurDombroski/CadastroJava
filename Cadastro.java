@@ -272,6 +272,8 @@ public class Cadastro extends JFrame {
         situacaoGroup = new ButtonGroup();
         situacaoGroup.add(ativoRadio);
         situacaoGroup.add(inativoRadio);
+        ativoRadio.setBackground(Color.WHITE);
+        inativoRadio.setBackground(Color.WHITE);
         panel.add(ativoRadio);
         frame.add(panel);
         panel.add(inativoRadio);
