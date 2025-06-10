@@ -168,7 +168,7 @@ public class Cadastro extends JFrame {
         paisText.setText("BRASIL");
         //paisText.setEnabled(false);
         paisText.setBackground(Color.LIGHT_GRAY);
-        paisText.setHorizontalAlignment(SwingConstants.CENTER);
+        //paisText.setHorizontalAlignment(SwingConstants.CENTER);
         paisText.setForeground(Color.BLACK);
         ufLabel = new JLabel("UF");
         ufLabel.setBounds(650, 220, 100 , 30);
