@@ -48,10 +48,12 @@ public class Cadastro extends JFrame {
         createUI(frame);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH); //Abre a tela maximizada
         frame.setVisible(true);
+        
     }
 
     private void createUI(JFrame frame) {
         JPanel panel = new JPanel(null);
+        panel.setBackground(Color.WHITE);
         Border blackline = BorderFactory.createLineBorder(Color.black);
         palavraLabel = new JLabel("Cadastro de Pessoa");
         palavraLabel.setBounds(20, 0, 400, 60);
@@ -103,7 +105,7 @@ public class Cadastro extends JFrame {
         panel.add(orgaoLabel);
         frame.add(panel);
         orgaoText = new JTextField();
-        orgaoText.setBounds(760, 140, 500, 30);
+        orgaoText.setBounds(760, 140, 200, 30);
         panel.add(orgaoText);
         frame.add(panel);
         cpfLabel = new JLabel("CPF/CNPJ:");
@@ -126,6 +128,7 @@ public class Cadastro extends JFrame {
         frame.add(panel);
         fornecedorCheck = new JCheckBox();
         fornecedorCheck.setBounds(1020, 60, 100, 30);
+        fornecedorCheck.setBackground(Color.WHITE);
         panel.add(fornecedorCheck);
         frame.add(panel);
         emailLabel = new JLabel("Email");
@@ -148,7 +151,7 @@ public class Cadastro extends JFrame {
         panel.add(cepLabel);
         frame.add(panel);
         cepText = new JTextField();
-        cepText.setBounds(760, 180, 500, 30);
+        cepText.setBounds(760, 180, 512, 30);
         panel.add(cepText);
         frame.add(panel);
         paisLabel = new JLabel("País");
@@ -169,7 +172,7 @@ public class Cadastro extends JFrame {
         paisText.setHorizontalAlignment(SwingConstants.CENTER);
         paisText.setForeground(Color.BLACK);
         ufLabel = new JLabel("UF");
-        ufLabel.setBounds(650, 220, 100, 30);
+        ufLabel.setBounds(650, 220, 100 , 30);
         ufLabel.setHorizontalAlignment(SwingConstants.CENTER);
         ufLabel.setVerticalAlignment(SwingConstants.CENTER);
         ufLabel.setBorder(blackline);
@@ -180,7 +183,7 @@ public class Cadastro extends JFrame {
         panel.add(ufText);
         frame.add(panel);
         siglaText = new JTextField();
-        siglaText.setBounds(920, 220, 340, 30);
+        siglaText.setBounds(920, 220, 351, 30);
         siglaText.setEnabled(false);
         siglaText.setBackground(Color.LIGHT_GRAY);
         panel.add(siglaText);
@@ -193,7 +196,7 @@ public class Cadastro extends JFrame {
         panel.add(municipioLabel);
         frame.add(panel);
         municipioText = new JTextField();
-        municipioText.setBounds(140, 260, 1130, 30);
+        municipioText.setBounds(140, 260, 1131, 30);
         municipioText.setBorder(blackline);
         municipioText.setBackground(Color.LIGHT_GRAY);
         panel.add(municipioText);
@@ -231,7 +234,7 @@ public class Cadastro extends JFrame {
         panel.add(complementoLabel);
         frame.add(panel);
         complementoText = new JTextField();
-        complementoText.setBounds(760, 340, 500, 30);
+        complementoText.setBounds(760, 340, 512, 30);
         panel.add(complementoText);
         frame.add(panel);
         bairroLabel = new JLabel("Bairro");
