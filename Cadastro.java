@@ -41,7 +41,6 @@ public class Cadastro extends JFrame {
         fornecedorCheck.setSelected(false);
         situacaoGroup.clearSelection();
     }
-
     private void createWindow() {
         JFrame frame = new JFrame("Cadastro Pessoa");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
