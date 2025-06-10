@@ -56,8 +56,8 @@ public class Cadastro extends JFrame {
         panel.setBackground(Color.WHITE);
         Border blackline = BorderFactory.createLineBorder(Color.black);
         palavraLabel = new JLabel("Cadastro de Pessoa");
-        palavraLabel.setBounds(20, 0, 400, 60);
-        palavraLabel.setFont(new Font("SansSerif", Font.PLAIN, 32));
+        palavraLabel.setBounds(20, 0, 500, 60);
+        palavraLabel.setFont(new Font("SansSerif", Font.PLAIN, 48));
         palavraLabel.setForeground(new Color(255, 102, 0));
         panel.add(palavraLabel);
         frame.add(panel);
