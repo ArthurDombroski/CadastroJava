@@ -290,6 +290,7 @@ public class Cadastro extends JFrame {
         limparButton.setBounds(260, 440, 100, 30);
         panel.add(limparButton);
         frame.add(panel);
+        
         cadastrarButton.addActionListener(e -> {
             String nome = nomeText.getText();
             String tipo = (String) paisCombo.getSelectedItem();
